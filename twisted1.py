@@ -5,7 +5,7 @@ from twisted.internet import reactor, endpoints
 
 PORT = int(os.environ.get('PORT', 8080))
 
-resource = File('/tmp')
+resource = File('./tmp')
 factory = Site(resource)
 endpoint = endpoints.TCP4ServerEndpoint(reactor, PORT)
 endpoint.listen(factory)
